@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocina Colombiana Eileen's - Sistema de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">Cocina Colombiana Eileen's</h1>
+                <p class="subtitle">Sistema de Gestión de Restaurante</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn btn-icon">
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Restaurant Info Card -->
+            <section class="card info-card">
+                <div class="card-header">
+                    <h2>📋 Información del Restaurante</h2>
+                </div>
+                <div class="card-body" id="restaurantInfo">
+                    <!-- Contenido dinámico generado por JavaScript -->
+                </div>
+            </section>
+
+            <!-- Menu Items -->
+            <section class="card menu-card">
+                <div class="card-header">
+                    <h2>🍲 Menú Destacado</h2>
+                </div>
+                <div class="card-body" id="menuItems">
+                    <!-- Contenido dinámico generado por JavaScript -->
+                </div>
+            </section>
+
+            <!-- Services -->
+            <section class="card services-card">
+                <div class="card-header">
+                    <h2>Servicios</h2>
+                    <button id="toggleServices" class="btn btn-small">Mostrar más</button>
+                </div>
+                <div class="card-body" id="servicesList">
+                    <!-- Contenido dinámico generado por JavaScript -->
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="card stats-card">
+                <div class="card-header">
+                    <h2>Estadísticas</h2>
+                </div>
+                <div class="card-body" id="statistics">
+                    <!-- Contenido dinámico generado por JavaScript -->
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="actions">
+                <button id="copyInfo" class="btn btn-primary">
+                    Copiar Información
+                </button>
+            </section>
+        </main>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
