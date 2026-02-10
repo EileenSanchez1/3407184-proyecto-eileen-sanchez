@@ -5,7 +5,7 @@
 
 ## Información del Estudiante
 - **Nombre**: Eileen Stefany Sanchez Galindo
-- **Fecha**: 07/02/2026
+- **Fecha**: 09/02/2026
 - **Dominio Asignado**: Sistema de Gestión de Restaurantes
 - **Categoría**: Hotelería y Turismo
 - **Entidad Principal**: Cocina Colombiana Eileen's
@@ -125,7 +125,7 @@ proyecto-restaurante/
 - Capacidad (mesas, sillas, salones privados)
 - Código de identificación
 
-### 2. Menú Destacado 
+### 2. Categorias y Menú Destacado 
 - 6 platos típicos colombianos
 - Precios formateados
 - Categorías (Plato Fuerte, Sopas, Entrada)
@@ -139,13 +139,10 @@ proyecto-restaurante/
 ### 4. Estadísticas Dinámicas 
 - Clientes diarios
 - Calificación promedio (4.7/5.0)
-- Ingresos diarios estimados
-- Número de platos en menú
-- **Precio promedio** (calculado con reduce())
-- **Popularidad promedio** (calculada con reduce())
-- **Plato más popular** (encontrado con reduce())
-- Años de operación
-- Número de empleados
+- Platos en menu
+- Años de operacion
+- Copiar informacion 
+
 
 ### 5. Interactividad 
 - **Cambio de tema**: Botón para alternar entre claro/oscuro
@@ -156,11 +153,10 @@ proyecto-restaurante/
 ---
 
 ## Características de Diseño
-- Responsive design (móvil, tablet, desktop)
+- Responsive design 
 - Variables CSS para temas personalizables
 - Animaciones suaves
-- Colores temáticos (naranja para comida colombiana)
-- Sombras y efectos hover profesionales
+- Colores temáticos 
 - Grid layout moderno
 
 ---
@@ -216,73 +212,6 @@ const {
 } = restaurantData;
 ```
 
----
-
-## Screenshots
-
-Para completar la entrega, toma capturas de pantalla:
-
-1. **Tema Claro**: Captura de la aplicación con tema claro
-2. **Tema Oscuro**: Captura después de hacer click en el botón de tema
-
-### Cómo tomar screenshots:
-- **Windows**: `Windows + Shift + S`
-- **Mac**: `Command + Shift + 4`
-- **Linux**: `Print Screen`
-
-Guarda las capturas como:
-- `screenshot-light.png`
-- `screenshot-dark.png`
-
----
-
-## Subir a GitHub
-
-### Opción 1: GitHub Desktop (Más Fácil)
-1. Descarga [GitHub Desktop](https://desktop.github.com/)
-2. Click en "File" → "New Repository"
-3. Nombre: `proyecto-restaurante-semana1`
-4. Crea el repositorio
-5. Copia todos los archivos a esa carpeta
-6. Commit con mensaje: "Proyecto Semana 1 completo"
-7. Click en "Publish repository"
-
-### Opción 2: Git en Terminal
-```bash
-# Inicializa Git en la carpeta del proyecto
-git init
-
-# Agrega todos los archivos
-git add .
-
-# Haz el commit
-git commit -m "Proyecto Semana 1: Sistema de Gestión de Restaurantes"
-
-# Conecta con GitHub (reemplaza TU_USUARIO)
-git remote add origin https://github.com/TU_USUARIO/proyecto-restaurante-semana1.git
-
-# Sube el proyecto
-git branch -M main
-git push -u origin main
-```
-
----
-
-##  Checklist de Entrega
-
-Antes de entregar, verifica:
-
-- [ ] Tu nombre está en el README.md
-- [ ] El proyecto abre correctamente en el navegador
-- [ ] Todos los botones funcionan
-- [ ] El cambio de tema funciona
-- [ ] Las estadísticas se muestran correctamente
-- [ ] No hay errores en la consola (F12)
-- [ ] Las capturas de pantalla están incluidas
-- [ ] El proyecto está subido a GitHub
-- [ ] El link de GitHub funciona
-
----
 
 ##  Características Destacadas
 
