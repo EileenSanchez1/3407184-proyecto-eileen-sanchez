@@ -3,37 +3,42 @@
 // CATEGORÍAS Y PRIORIDADES
 
 const CATEGORIES = {
-    platoFuerte: { name:'Plato Fuerte' , emoji: '🍖'},
-    sopas: { name:'Sopas' , emoji: '🍲'},
-    entrada: { name:'Entrada' , emoji: '🥟'},
-    bebidas: { name:'Bebidas' , emoji: '🥤'},
-    postres: { name:'Postres' , emoji: '🍰'}
-    
+  platoFuerte: { name: 'Plato Fuerte', emoji: '🍖' },
+  sopas: { name: 'Sopas', emoji: '🍲' },
+  entrada: { name: 'Entrada', emoji: '🥟' },
+  bebidas: { name: 'Bebidas', emoji: '🥤' },
+  postres: { name: 'Postres', emoji: '🍰' }
 };
 
 const PRIORITIES = {
-    high: { name:'Alta' , color: '#ef4444'},
-    sopas: { name:'Media' , color: 'f59e0b'},
-    postres: { name:'Baja' , color: '22c55e'}
+  high: { name: 'Alta', color: '#ef4444' },
+  medium: { name: 'Media', color: '#f59e0b' },
+  low: { name: 'Baja', color: '#22c55e' }
 };
 
-//ESTADO GLOBAL
+// ============================================
+// ESTADO GLOBAL
+// ============================================
 
 let dishes = [];
 let editingDishId = null;
 
-//PERSISTENCIA (LocalStorage)
+// ============================================
+// PERSISTENCIA (LocalStorage)
+// ============================================
 
-const loasDishes = () => {
-    const stored = localStorage.getItem('restaurantDishes');
-    return stored ? JSON.parse(stored) : [];
+const loadDishes = () => {
+  const stored = localStorage.getItem('restaurantDishes');
+  return stored ? JSON.parse(stored) : [];
 };
 
 const saveDishes = dishesToSave => {
-    localStorage.setItem('restaurantDishes' , JSON.stringify(dishesToSave));
+  localStorage.setItem('restaurantDishes', JSON.stringify(dishesToSave));
 };
 
-//CRUD - CREAR PLATO
+// ============================================
+// CRUD - CREAR PLATO
+// ============================================
 
 const createDish = (dishData = {}) => {
   // Crear nuevo plato con valores por defecto
@@ -300,6 +305,9 @@ const handleDishEdit = dishId => {
   document.getElementById('cancel-btn').style.display = 'inline-block';
 
   editingDishId = dishId;
+  
+  // Scroll al formulario
+  document.getElementById('dish-form').scrollIntoView({ behavior: 'smooth' });
 };
 
 const handleDishDelete = dishId => {
@@ -349,6 +357,21 @@ const toggleTheme = () => {
   
   if (body.classList.contains('dark-theme')) {
     themeIcon.textContent = '☀️';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeIcon.textContent = '🌙';
+    localStorage.setItem('theme', 'light');
+  }
+};
+
+const loadTheme = () => {
+  const savedTheme = localStorage.getItem('theme') ?? 'light';
+  const body = document.body;
+  const themeIcon = document.querySelector('.theme-icon');
+  
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-theme');
+    themeIcon.textContent = '☀️';
   } else {
     themeIcon.textContent = '🌙';
   }
@@ -391,7 +414,7 @@ const attachEventListeners = () => {
   document.getElementById('clear-inactive').addEventListener('click', () => {
     if (confirm('¿Eliminar todos los platos no disponibles?')) {
       dishes = clearInactive();
-      showToast('✅ Platos eliminados');
+      showToast('✅ Platos no disponibles eliminados');
       renderDishes(applyCurrentFilters());
       renderStats(getStats(dishes));
     }
@@ -422,11 +445,22 @@ const attachEventListeners = () => {
 // ============================================
 
 const init = () => {
+  // Cargar tema guardado
+  loadTheme();
+  
+  // Cargar platos desde LocalStorage
   dishes = loadDishes();
+  
+  // Renderizar
   renderDishes(dishes);
   renderStats(getStats(dishes));
+  
+  // Adjuntar event listeners
   attachEventListeners();
+  
   console.log('Aplicación inicializada');
+  console.log(`📊 ${dishes.length} platos cargados`);
 };
 
+// Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', init);
