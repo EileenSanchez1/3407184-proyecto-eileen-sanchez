@@ -426,7 +426,7 @@ const init = () => {
   renderDishes(dishes);
   renderStats(getStats(dishes));
   attachEventListeners();
-  console.log('✅ Aplicación Semana 2 inicializada');
+  console.log('Aplicación inicializada');
 };
 
 document.addEventListener('DOMContentLoaded', init);
