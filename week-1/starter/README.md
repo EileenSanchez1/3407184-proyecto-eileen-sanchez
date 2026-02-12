@@ -150,6 +150,7 @@ proyecto-restaurante/
 - **Toggle servicios**: Muestra/oculta la lista completa
 - **Notificaciones toast**: Feedback visual de acciones
 
+
 ---
 
 ## Características de Diseño
