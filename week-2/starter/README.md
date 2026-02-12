@@ -31,7 +31,7 @@ Gestor completo de menú de restaurante que permite crear, editar, eliminar y fi
 
 ## Conceptos ES2023 Aplicados
 
-### Semana 1 (Mantenidos):
+### Semana 1 (Se mantiene):
 - ✅ const/let
 - ✅ Template literals
 - ✅ Arrow functions
@@ -177,11 +177,11 @@ const CATEGORIES = {
 **NUNCA se muta el estado directamente:**
 
 ```javascript
-// ❌ MAL - Mutar directamente
+// MAL - Mutar directamente
 dishes.push(newDish);
 dish.active = !dish.active;
 
-// ✅ BIEN - Crear nuevo array/objeto
+//BIEN - Crear nuevo array/objeto
 const newDishes = [...dishes, newDish];
 const updatedDish = { ...dish, active: !dish.active };
 ```
