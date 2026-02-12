@@ -234,7 +234,7 @@ semana-2/
 
 **Eileen Stefany Sanchez Galindo**
 
-Proyecto Eeek 2 - Bootcamp JavaScript ES2023  
+Proyecto Week 2 - Bootcamp JavaScript ES2023  
 Dominio: Sistema de Gestión de Restaurantes  
 Categoria: Hotelería y Turismo
 
