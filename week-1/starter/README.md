@@ -161,57 +161,6 @@ proyecto-restaurante/
 
 ---
 
-## Autoevaluación
-
-| Criterio | Porcentaje | Estado |
-|----------|-----------|--------|
-| **Funcionalidad** | 100% | Todo funciona correctamente |
-| **Código ES2023** | 100% | Solo sintaxis moderna |
-| **Código Limpio** | 100% | Bien organizado y comentado |
-| **Adaptación al Dominio** | 100% | Completamente coherente |
-| **TOTAL ESTIMADO** | **100%** | **APROBADO** |
-
----
-
-## Detalles Técnicos
-
-### Cálculos con Array Methods:
-```javascript
-// Precio promedio del menú
-const averagePrice = menu.reduce((sum, item) => sum + item.price, 0) / menu.length;
-
-// Popularidad promedio
-const averagePopularity = menu.reduce((sum, item) => sum + item.popularity, 0) / menu.length;
-
-// Plato más popular
-const mostPopular = menu.reduce((prev, current) => 
-  current.popularity > prev.popularity ? current : prev
-);
-```
-
-### Template Literals Complejos:
-```javascript
-const menuHTML = `
-  <div class="menu-grid">
-    ${menu.map(item => `
-      <div class="menu-item">
-        <div class="menu-item-name">${item.name}</div>
-        <div class="menu-item-price">$${item.price.toLocaleString()}</div>
-      </div>
-    `).join('')}
-  </div>
-`;
-```
-
-### Destructuring Anidado:
-```javascript
-const { 
-  location: { address, city, zone, phone },
-  capacity: { tables, seats, privateRooms },
-  schedule: { weekdays, weekends }
-} = restaurantData;
-```
-
 
 ##  Características Destacadas
 
