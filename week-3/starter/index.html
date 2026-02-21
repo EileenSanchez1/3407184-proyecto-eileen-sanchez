@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocina Colombiana Eileen's - Sistema de Gestión POO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">🍽️ Cocina Colombiana Eileen's</h1>
+                <p class="subtitle">Sistema de Gestión con POO - Semana 3</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn btn-icon">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Estadísticas Resumen -->
+        <section class="stats-summary" id="stats-summary">
+            <div class="stat-card">
+                <span class="stat-value" id="stat-total">0</span>
+                <span class="stat-label">Total Platos</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-active">0</span>
+                <span class="stat-label">Disponibles</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-inactive">0</span>
+                <span class="stat-label">No Disponibles</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-users">0</span>
+                <span class="stat-label">Usuarios</span>
+            </div>
+        </section>
+
+        <!-- Formulario para Crear Platos -->
+        <section class="card form-section">
+            <div class="card-header">
+                <h2 id="form-title">➕ Agregar Plato al Menú</h2>
+            </div>
+            <div class="card-body">
+                <form id="item-form" class="item-form">
+                    <div class="form-group">
+                        <label for="item-name">Nombre del Plato *</label>
+                        <input type="text" id="item-name" placeholder="Ej: Bandeja Paisa" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="item-type">Tipo de Plato *</label>
+                            <select id="item-type" required>
+                                <option value="MainDish">🍖 Plato Fuerte</option>
+                                <option value="Soup">🍲 Sopa</option>
+                                <option value="Appetizer">🥟 Entrada</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-location">Ubicación *</label>
+                            <input type="text" id="item-location" placeholder="Ej: Cocina Principal" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="item-price">Precio (COP) *</label>
+                            <input type="number" id="item-price" placeholder="25000" min="0" step="1000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-time">Tiempo Prep. (min) *</label>
+                            <input type="number" id="item-time" placeholder="20" min="5" step="5" required>
+                        </div>
+                    </div>
+
+                    <!-- Campos específicos por tipo -->
+                    <div id="specific-fields">
+                        <!-- MainDish fields -->
+                        <div class="type-fields" id="MainDish-fields">
+                            <div class="form-group">
+                                <label for="protein-type">Tipo de Proteína</label>
+                                <input type="text" id="protein-type" placeholder="Ej: Carne, Pollo, Cerdo">
+                            </div>
+                        </div>
+
+                        <!-- Soup fields -->
+                        <div class="type-fields" id="Soup-fields" style="display:none;">
+                            <div class="form-group">
+                                <label for="soup-type">Tipo de Sopa</label>
+                                <select id="soup-type">
+                                    <option value="caliente">Caliente</option>
+                                    <option value="fria">Fría</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Appetizer fields -->
+                        <div class="type-fields" id="Appetizer-fields" style="display:none;">
+                            <div class="form-group">
+                                <label for="portion-size">Tamaño de Porción</label>
+                                <select id="portion-size">
+                                    <option value="individual">Individual</option>
+                                    <option value="compartir">Para Compartir</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Agregar Plato</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="card filters-section">
+            <div class="card-header">
+                <h2>🔍 Filtros</h2>
+            </div>
+            <div class="card-body">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-type">Tipo:</label>
+                        <select id="filter-type">
+                            <option value="all">Todos</option>
+                            <option value="MainDish">Plato Fuerte</option>
+                            <option value="Soup">Sopa</option>
+                            <option value="Appetizer">Entrada</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-status">Estado:</label>
+                        <select id="filter-status">
+                            <option value="all">Todos</option>
+                            <option value="active">Disponibles</option>
+                            <option value="inactive">No Disponibles</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group search-group">
+                        <label for="search-input">Buscar:</label>
+                        <input type="text" id="search-input" placeholder="Buscar platos...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Platos -->
+        <section class="card items-section">
+            <div class="card-header">
+                <h2>📝 Menú del Restaurante</h2>
+            </div>
+            <div class="card-body">
+                <div id="item-list" class="item-list">
+                    <!-- Los platos se renderizan aquí -->
+                </div>
+
+                <div id="empty-state" class="empty-state">
+                    <p>📭 No hay platos en el menú</p>
+                    <p class="empty-state-hint">Agrega tu primer plato usando el formulario arriba</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas Detalladas -->
+        <section class="card detailed-stats">
+            <div class="card-header">
+                <h2>📊 Estadísticas por Tipo</h2>
+            </div>
+            <div class="card-body">
+                <div id="stats-details" class="stats-grid">
+                    <!-- Estadísticas por tipo -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
