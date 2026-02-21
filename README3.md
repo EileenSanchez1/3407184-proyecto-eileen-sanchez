@@ -18,16 +18,16 @@ Sistema completo de gestión de menú usando **Programación Orientada a Objetos
 
 ### Funcionalidades Principales
 
-1. **✅ Gestión de Platos** - Crear y administrar platos del menú
-2. **🏗️ Jerarquía de Clases** - Diferentes tipos de platos con herencia
-3. **🔒 Encapsulación** - Campos privados con acceso controlado
-4. **👥 Sistema de Usuarios** - Clientes y chefs con roles diferentes
-5. **🔍 Filtros Avanzados** - Por tipo, estado y búsqueda
-6. **📊 Estadísticas** - Por tipo de plato en tiempo real
+1. **Gestión de Platos** - Crear y administrar platos del menú
+2. **Jerarquía de Clases** - Diferentes tipos de platos con herencia
+3. **Encapsulación** - Campos privados con acceso controlado
+4. **Sistema de Usuarios** - Clientes y chefs con roles diferentes
+5. **Filtros Avanzados** - Por tipo, estado y búsqueda
+6. **Estadísticas** - Por tipo de plato en tiempo real
 
 ---
 
-## 🏗️ Arquitectura de Clases
+## Arquitectura de Clases
 
 ### Diagrama de Clases
 
@@ -46,15 +46,15 @@ Restaurant (clase principal)
 
 ---
 
-## 📚 Conceptos ES2023 Aplicados
+## Conceptos ES2023 Aplicados
 
 ### Semanas Anteriores (Mantenidos):
-- ✅ const/let
-- ✅ Template literals
-- ✅ Arrow functions
-- ✅ Destructuring
-- ✅ Spread operator
-- ✅ Array methods (map, filter, reduce)
+-  const/let
+-  Template literals
+-  Arrow functions
+-  Destructuring
+-  Spread operator
+-  Array methods (map, filter, reduce)
 
 ### Semana 3 (Nuevos):
 
@@ -148,7 +148,7 @@ getInfo() {
 
 ---
 
-## 🎯 Modelo de Datos
+## Modelo de Datos
 
 ### Clase Base: MenuItem
 
@@ -224,7 +224,7 @@ class Chef extends Person {
 
 ---
 
-## 🔒 Encapsulación
+## Encapsulación
 
 ### Campos Privados
 Todos los campos internos son privados (#) y solo se accede mediante getters/setters:
@@ -260,7 +260,7 @@ set email(value) {
 
 ---
 
-## 🎨 Interfaz de Usuario
+## Interfaz de Usuario
 
 ### Secciones
 
@@ -278,31 +278,8 @@ set email(value) {
 - **Badges**: Colores según tipo de plato
 - **Iconos**: 🍖 Plato Fuerte, 🍲 Sopa, 🥟 Entrada
 
----
 
-## ✅ Checklist de Verificación
-
-### Clases y Herencia (40 puntos)
-- [x] Clase base MenuItem con campos privados (10pts)
-- [x] 3 clases derivadas: MainDish, Soup, Appetizer (10pts)
-- [x] Uso correcto de extends y super (10pts)
-- [x] Método getInfo() sobrescrito en cada clase (10pts)
-
-### Encapsulación (30 puntos)
-- [x] Todos los campos son privados (#) (10pts)
-- [x] Getters para todas las propiedades (10pts)
-- [x] Setters con validación (location, email) (10pts)
-
-### Características Modernas (30 puntos)
-- [x] Static block en clase Restaurant (10pts)
-- [x] Métodos estáticos (isValidId, generateId) (10pts)
-- [x] Integración con DOM funcional (10pts)
-
-**Total: 100/100 puntos** ✅
-
----
-
-## 🔧 Funcionalidades Implementadas
+##  Funcionalidades Implementadas
 
 ### CRUD de Platos
 ```javascript
@@ -334,7 +311,7 @@ restaurant.getAllUsers()           // Obtener todos
 
 ---
 
-## 🚀 Cómo Ejecutar
+## Cómo Ejecutar
 
 ### Opción 1: Abrir directamente
 1. Doble click en `index.html`
@@ -349,7 +326,7 @@ Click derecho en `index.html` → "Open with Live Server"
 
 ---
 
-## 📁 Estructura de Archivos
+## Estructura de Archivos
 
 ```
 semana-3/
@@ -375,7 +352,7 @@ semana-3/
 
 ---
 
-## 💡 Ejemplos de Uso
+##  Ejemplos de Uso
 
 ### Crear un Plato Fuerte
 ```javascript
@@ -424,7 +401,7 @@ plato.activate();   // Marcar como disponible
 
 --- 
 
-## 📊 Datos de Prueba Incluidos
+##  Datos de Prueba Incluidos
 
 El sistema viene con 3 platos de prueba:
 - **Bandeja Paisa** (MainDish) - $35,000
@@ -437,7 +414,7 @@ Y 2 usuarios:
 
 ---
 
-## ⚠️ Validaciones Implementadas
+##  Validaciones Implementadas
 
 1. **Ubicación** - No puede estar vacía
 2. **Email** - Debe tener formato válido
@@ -445,7 +422,7 @@ Y 2 usuarios:
 4. **Instancias** - Solo acepta instancias correctas de clases
 5. **Campos requeridos** - Validación en formulario
 
-## 👨‍💻 Autor
+##  Autor
 
 **Eileen Stefany Sanchez Galindo**
 
