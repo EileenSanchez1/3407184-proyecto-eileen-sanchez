@@ -1,195 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocina Colombiana Eileen's - Sistema de Gestión POO</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante El Sabor - Semana 3</title>
+  <link rel="stylesheet" href="styles_s3.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="title">🍽️ Cocina Colombiana Eileen's</h1>
-                <p class="subtitle">Sistema de Gestión con POO - Semana 3</p>
-            </div>
-            <div class="header-actions">
-                <button id="themeToggle" class="btn btn-icon">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
-        </header>
 
-        <!-- Estadísticas Resumen -->
-        <section class="stats-summary" id="stats-summary">
-            <div class="stat-card">
-                <span class="stat-value" id="stat-total">0</span>
-                <span class="stat-label">Total Platos</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-active">0</span>
-                <span class="stat-label">Disponibles</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-inactive">0</span>
-                <span class="stat-label">No Disponibles</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-users">0</span>
-                <span class="stat-label">Usuarios</span>
-            </div>
-        </section>
+  <header class="header">
+    <div class="header-badge">SEMANA 03 · CALCULADORA DE DOMINIO</div>
+    <h1 class="header-title">🍽️ RESTAURANTE EL SABOR</h1>
+    <p class="header-sub">Operadores, Comparaciones y Lógica · Hotelería y Hospitalidad</p>
+  </header>
 
-        <!-- Formulario para Crear Platos -->
-        <section class="card form-section">
-            <div class="card-header">
-                <h2 id="form-title">➕ Agregar Plato al Menú</h2>
-            </div>
-            <div class="card-body">
-                <form id="item-form" class="item-form">
-                    <div class="form-group">
-                        <label for="item-name">Nombre del Plato *</label>
-                        <input type="text" id="item-name" placeholder="Ej: Bandeja Paisa" required>
-                    </div>
+  <main class="container">
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="item-type">Tipo de Plato *</label>
-                            <select id="item-type" required>
-                                <option value="MainDish">🍖 Plato Fuerte</option>
-                                <option value="Soup">🍲 Sopa</option>
-                                <option value="Appetizer">🥟 Entrada</option>
-                            </select>
-                        </div>
+    <!-- SECCIÓN 1: DATOS BASE -->
+    <section class="card">
+      <h2 class="card-title">📦 Constantes del Dominio</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">DISH_PRICE</span>
+        <span class="value code">35_000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">DRINK_PRICE</span>
+        <span class="value code">8_000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">DESSERT_PRICE</span>
+        <span class="value code">12_000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">MAX_TABLES</span>
+        <span class="value code">20</span>
+      </div>
+      <div class="info-row">
+        <span class="label">LOYALTY_DISCOUNT</span>
+        <span class="value code">0.15</span>
+      </div>
+      <div class="info-row">
+        <span class="label">TIP_RATE</span>
+        <span class="value code">0.10</span>
+      </div>
+    </section>
 
-                        <div class="form-group">
-                            <label for="item-location">Ubicación *</label>
-                            <input type="text" id="item-location" placeholder="Ej: Cocina Principal" required>
-                        </div>
-                    </div>
+    <!-- SECCIÓN 2: OPERACIONES ARITMÉTICAS -->
+    <section class="card">
+      <h2 class="card-title">➕ Operaciones Aritméticas</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">Platos × 3</span>
+        <span class="value">$105.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Bebidas × 2</span>
+        <span class="value">$16.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Postre × 1</span>
+        <span class="value">$12.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Subtotal orden</span>
+        <span class="value highlight">$133.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Propina (10%)</span>
+        <span class="value">$13.300</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Total con propina</span>
+        <span class="value highlight">$146.300</span>
+      </div>
+      <p class="op-note">dishesTotal + drinksTotal + dessertTotal → orderSubtotal * TIP_RATE</p>
+    </section>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="item-price">Precio (COP) *</label>
-                            <input type="number" id="item-price" placeholder="25000" min="0" step="1000" required>
-                        </div>
+    <!-- SECCIÓN 3: ASIGNACIÓN COMPUESTA -->
+    <section class="card">
+      <h2 class="card-title">🔄 Asignación Compuesta</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">Ventas iniciales</span>
+        <span class="value">$0</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">+=</span> Turno almuerzo</span>
+        <span class="value">$280.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">+=</span> Turno cena</span>
+        <span class="value">$700.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">-=</span> Costos insumos</span>
+        <span class="value">$550.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">*=</span> Bono 5%</span>
+        <span class="value">$577.500</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">/=</span> Entre 2 socios</span>
+        <span class="value highlight">$288.750</span>
+      </div>
+    </section>
 
-                        <div class="form-group">
-                            <label for="item-time">Tiempo Prep. (min) *</label>
-                            <input type="number" id="item-time" placeholder="20" min="5" step="5" required>
-                        </div>
-                    </div>
+    <!-- SECCIÓN 4: COMPARACIÓN ESTRICTA -->
+    <section class="card">
+      <h2 class="card-title">🔍 Comparación Estricta (===)</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">seatedGuests === tableCapacity</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">orderedDish === dishOfTheDay</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">occupiedTables &lt; MAX_TABLES</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">orderAmount &gt;= deliveryMinimum</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">paymentMethod !== "efectivo"</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <p class="op-note">⚠️ Siempre === · Nunca ==</p>
+    </section>
 
-                    <!-- Campos específicos por tipo -->
-                    <div id="specific-fields">
-                        <!-- MainDish fields -->
-                        <div class="type-fields" id="MainDish-fields">
-                            <div class="form-group">
-                                <label for="protein-type">Tipo de Proteína</label>
-                                <input type="text" id="protein-type" placeholder="Ej: Carne, Pollo, Cerdo">
-                            </div>
-                        </div>
+    <!-- SECCIÓN 5: OPERADORES LÓGICOS -->
+    <section class="card card-logica">
+      <h2 class="card-title">🧠 Operadores Lógicos</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">isLoyalCustomer <span class="op">&&</span> orden ≥ $80.000</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Descuento (15%)</span>
+        <span class="value highlight">$14.250</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Total con descuento</span>
+        <span class="value highlight">$80.750</span>
+      </div>
+      <div class="info-row">
+        <span class="label">isLoyalCustomer <span class="op">||</span> orden ≥ $60.000</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label"><span class="op">!</span>(mesas ≥ MAX_TABLES)</span>
+        <span class="value bool-true">true</span>
+      </div>
+    </section>
 
-                        <!-- Soup fields -->
-                        <div class="type-fields" id="Soup-fields" style="display:none;">
-                            <div class="form-group">
-                                <label for="soup-type">Tipo de Sopa</label>
-                                <select id="soup-type">
-                                    <option value="caliente">Caliente</option>
-                                    <option value="fria">Fría</option>
-                                </select>
-                            </div>
-                        </div>
+    <!-- SECCIÓN 6: RESUMEN -->
+    <section class="card card-resumen">
+      <h2 class="card-title">📊 Resumen del Día</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">Mesas ocupadas</span>
+        <span class="value">18 / 20</span>
+      </div>
+      <div class="info-row">
+        <span class="label">¿Mesas disponibles?</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Ventas brutas</span>
+        <span class="value">$550.000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Ganancia neta / socio</span>
+        <span class="value highlight">$288.750</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Descuento aplicado</span>
+        <span class="value">$14.250</span>
+      </div>
+      <div class="info-row">
+        <span class="label">¿Acepta reservas?</span>
+        <span class="value bool-true">true</span>
+      </div>
+    </section>
 
-                        <!-- Appetizer fields -->
-                        <div class="type-fields" id="Appetizer-fields" style="display:none;">
-                            <div class="form-group">
-                                <label for="portion-size">Tamaño de Porción</label>
-                                <select id="portion-size">
-                                    <option value="individual">Individual</option>
-                                    <option value="compartir">Para Compartir</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+  </main>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Agregar Plato</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+  <footer class="footer">
+    <p>🚀 ¡Gracias potr visitarnos!</p>
+    <p class="footer-sub">Bootcamp JavaScript ES2023 · Semana 3 — Operadores y Lógica</p>
+  </footer>
 
-        <!-- Filtros -->
-        <section class="card filters-section">
-            <div class="card-header">
-                <h2>🔍 Filtros</h2>
-            </div>
-            <div class="card-body">
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="filter-type">Tipo:</label>
-                        <select id="filter-type">
-                            <option value="all">Todos</option>
-                            <option value="MainDish">Plato Fuerte</option>
-                            <option value="Soup">Sopa</option>
-                            <option value="Appetizer">Entrada</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-group">
-                        <label for="filter-status">Estado:</label>
-                        <select id="filter-status">
-                            <option value="all">Todos</option>
-                            <option value="active">Disponibles</option>
-                            <option value="inactive">No Disponibles</option>
-                        </select>
-                    </div>
-
-                    <div class="filter-group search-group">
-                        <label for="search-input">Buscar:</label>
-                        <input type="text" id="search-input" placeholder="Buscar platos...">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lista de Platos -->
-        <section class="card items-section">
-            <div class="card-header">
-                <h2>📝 Menú del Restaurante</h2>
-            </div>
-            <div class="card-body">
-                <div id="item-list" class="item-list">
-                    <!-- Los platos se renderizan aquí -->
-                </div>
-
-                <div id="empty-state" class="empty-state">
-                    <p>📭 No hay platos en el menú</p>
-                    <p class="empty-state-hint">Agrega tu primer plato usando el formulario arriba</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Estadísticas Detalladas -->
-        <section class="card detailed-stats">
-            <div class="card-header">
-                <h2>📊 Estadísticas por Tipo</h2>
-            </div>
-            <div class="card-body">
-                <div id="stats-details" class="stats-grid">
-                    <!-- Estadísticas por tipo -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Toast Notification -->
-        <div id="toast" class="toast">
-            <span id="toastMessage"></span>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
