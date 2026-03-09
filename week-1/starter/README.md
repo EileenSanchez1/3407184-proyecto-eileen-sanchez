@@ -1,181 +1,99 @@
-# Sistema de Gestión de Restaurantes
-## Cocina Colombiana Eileen's
+# 🍽️ Semana 1 — Ficha de Presentación de Dominio
+
+**Bootcamp JavaScript ES2023**
 
 ---
 
-## Información del Estudiante
-- **Nombre**: Eileen Stefany Sanchez Galindo
-- **Fecha**: 09/02/2026
-- **Dominio Asignado**: Sistema de Gestión de Restaurantes
-- **Categoría**: Hotelería y Turismo
-- **Entidad Principal**: Cocina Colombiana Eileen's
+## 📋 Descripción
+
+Proyecto de la Semana 1 del bootcamp. Consiste en una ficha digital que presenta la entidad principal del dominio asignado: un plato del menú del **Restaurante El Sabor**.
+
+El proyecto aplica los conceptos básicos de JavaScript vistos en la semana:
+- `console.log()` para mostrar información en consola
+- Tipos primitivos: `string`, `number`, `boolean`
+- Expresiones aritméticas calculadas directamente
+- Comentarios en español explicando cada sección
 
 ---
 
-## Descripción del Proyecto
-Aplicación web interactiva que muestra la ficha completa de información del restaurante "Cocina Colombiana Eileen's".
+## 🏷️ Dominio Asignado
 
-### Características:
-- Información general del restaurante (ubicación, horarios, capacidad)
-- Menú destacado con 6 platos típicos colombianos
-- 8 servicios ofrecidos
-- Estadísticas calculadas dinámicamente
-- Tema claro/oscuro
-- Copiar información al portapapeles
-- Toggle para mostrar/ocultar servicios
+| Campo | Detalle |
+|---|---|
+| **Dominio** | Sistema de Gestión de Restaurantes |
+| **Categoría** | Hotelería y Hospitalidad |
+| **Entidad principal** | Plato del menú |
+| **Ejemplo de entidad** | Bandeja Paisa Tradicional (PLT-001) |
 
 ---
 
-## Conceptos ES2023 Aplicados
+## 📁 Estructura del Proyecto
 
-### Variables con const/let
-- **const**: Usado para todos los datos que no cambian
-- **let**: Solo donde es necesario reasignar valores
-- **NO se usa var** en ninguna parte
-
-```javascript
-const restaurantData = {
-  name: "Cocina Colombiana Eileen's",
-  code: 'REST-001',
-  // ...
-};
 ```
-
-### Template Literals
-Usados para crear HTML dinámico y strings formateados:
-
-```javascript
-const infoHTML = `
-  <div class="info-value">${address}, ${zone}</div>
-`;
-```
-
-### Arrow Functions
-Todas las funciones usan sintaxis de arrow function:
-
-```javascript
-const toggleTheme = () => {
-  body.classList.toggle('dark-theme');
-};
-```
-
-### Destructuring
-Extracción de propiedades de objetos:
-
-```javascript
-const { 
-  name, 
-  location: { address, city, zone },
-  capacity: { tables, seats }
-} = restaurantData;
-```
-
-### Array Methods
-- **map()**: Transforma arrays en HTML
-- **reduce()**: Calcula promedios y encuentra valores máximos
-- **join()**: Concatena arrays de HTML
-
-```javascript
-const averagePrice = menu.reduce((sum, item) => sum + item.price, 0) / menu.length;
-
-const mostPopular = menu.reduce((prev, current) => 
-  current.popularity > prev.popularity ? current : prev
-);
+semana-01/
+├── README.md        ← Este archivo
+├── index.html       ← Vista visual de la ficha en el navegador
+├── styles.css       ← Estilos con paleta azul, morado y blanco
+└── starter/
+    └── script.js    ← Script principal que corre con Node.js
 ```
 
 ---
 
-## Cómo Ejecutar
+## 🚀 Cómo Ejecutar
 
-### Opción 1: Abrir directamente
-1. Doble click en `index.html`
-
-### Opción 2: Con servidor local (recomendado)
+### En la terminal (Node.js)
 ```bash
-# Con Python 3
-python -m http.server 8000
-
-# Luego abre en navegador:
-# http://localhost:8000
+cd semana-01/starter
+node script.js
 ```
 
-### Opción 3: Con Live Server (VS Code)
-1. Instala la extensión "Live Server"
-2. Click derecho en `index.html` → "Open with Live Server"
+### En el navegador
+Abre el archivo `index.html` directamente en tu navegador. No necesita servidor.
 
 ---
 
-## Estructura de Archivos
+## ✅ Requisitos Cumplidos
+
+| Requisito | Estado |
+|---|---|
+| El script corre sin errores | ✅ |
+| Muestra los 7 datos requeridos | ✅ |
+| Al menos 3 comentarios en español | ✅ |
+| Salida organizada con separadores visuales | ✅ |
+| Usa `string`, `number` Y `boolean` | ✅ |
+| Expresión aritmética calculada automáticamente | ✅ `35000 * 0.85` |
+| Adaptación coherente al dominio asignado | ✅ |
+
+---
+
+## 🎨 Paleta de Colores (HTML/CSS)
+
+| Color | Uso |
+|---|---|
+| `#1a1a4e` Azul oscuro | Fondo principal |
+| `#2d3a8c` Azul medio | Encabezado |
+| `#4a6cf7` Azul claro | Acentos y códigos |
+| `#7c3aed` Morado fuerte | Degradados |
+| `#a78bfa` Morado claro | Títulos y badges |
+| `#ffffff` Blanco | Texto principal |
+
+---
+
+## 💡 Datos de la Entidad
+
 ```
-proyecto-restaurante/
-├── index.html          # Estructura HTML completa
-├── styles.css          # Estilos CSS con temas
-├── script.js           # JavaScript ES2023
-└── README.md           # Este archivo
+Nombre:              Bandeja Paisa Tradicional
+Código:              PLT-001
+Categoría:           Plato Fuerte - Comida Típica
+Estado:              Disponible
+Precio base:         35000
+Precio con descuento: 29750   ← calculado: 35000 * 0.85
+Disponible:          true
+Apto alérgicos:      false
+Total registros:     48
 ```
 
 ---
 
-## Funcionalidades Implementadas
-
-### 1. Información del Restaurante 
-- Dirección completa
-- Teléfono de contacto
-- Horarios de atención
-- Capacidad (mesas, sillas, salones privados)
-- Código de identificación
-
-### 2. Categorias y Menú Destacado 
-- 6 platos típicos colombianos
-- Precios formateados
-- Categorías (Plato Fuerte, Sopas, Entrada)
-- Barra de popularidad visual para cada plato
-
-### 3. Servicios 
-- 8 servicios con iconos
-- Toggle para mostrar más/menos
-- Efectos hover interactivos
-
-### 4. Estadísticas Dinámicas 
-- Clientes diarios
-- Calificación promedio (4.7/5.0)
-- Platos en menu
-- Años de operacion
-- Copiar informacion 
-
-
-### 5. Interactividad 
-- **Cambio de tema**: Botón para alternar entre claro/oscuro
-- **Copiar información**: Copia datos al portapapeles
-- **Toggle servicios**: Muestra/oculta la lista completa
-- **Notificaciones toast**: Feedback visual de acciones
-
-
----
-
-## Características de Diseño
-- Responsive design 
-- Variables CSS para temas personalizables
-- Animaciones suaves
-- Colores temáticos 
-- Grid layout moderno
-
----
-
-
-##  Características Destacadas
-
-1. **Platos típicos colombianos auténticos**: Bandeja Paisa, Ajiaco, Lechona, etc.
-2. **Cálculos avanzados**: Uso de reduce() para múltiples estadísticas
-3. **Destructuring anidado**: Extracción de propiedades a varios niveles
-4. **Template literals complejos**: HTML multilínea con interpolación
-5. **UX profesional**: Notificaciones, transiciones, feedback visual
-
----
-
-##  Autor
-**Eileen Stefany Sanchez Galindo**
-
-Proyecto de la Semana 1 - Bootcamp JavaScript ES2023  
-Dominio: Sistema de Gestión de Restaurantes  
-Hotelería y Turismo
+*Semana 1 · Bootcamp JavaScript ES2023*
