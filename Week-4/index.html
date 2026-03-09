@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante El Sabor - Semana 4</title>
+  <link rel="stylesheet" href="styles_s4.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-badge">SEMANA 04 · GENERADOR DE MENSAJES</div>
+    <h1 class="header-title">🍽️ RESTAURANTE EL SABOR</h1>
+    <p class="header-sub">Métodos de String y Template Literals · Hotelería y Hospitalidad</p>
+  </header>
+
+  <main class="container">
+
+    <!-- SECCIÓN 1: DATOS BASE -->
+    <section class="card">
+      <h2 class="card-title">📦 Datos del Dominio</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">rawEntityName</span>
+        <span class="value code">"  Bandeja Paisa Tradicional  "</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityCategory</span>
+        <span class="value">"Plato Fuerte - Comida Típica"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityCode</span>
+        <span class="value code">"PLT-001"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">mainValue</span>
+        <span class="value code">35_000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">isActive</span>
+        <span class="value bool-true">true</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: TRANSFORMACIONES -->
+    <section class="card">
+      <h2 class="card-title">🔧 Transformaciones de String</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">rawEntityName<span class="method">.trim()</span></span>
+        <span class="value">"Bandeja Paisa Tradicional"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityName<span class="method">.toUpperCase()</span></span>
+        <span class="value highlight">"BANDEJA PAISA TRADICIONAL"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityName<span class="method">.toLowerCase()</span></span>
+        <span class="value">"bandeja paisa tradicional"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityCode<span class="method">.slice(0, 3)</span></span>
+        <span class="value code">"PLT"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityCode<span class="method">.replace("-", " — ")</span></span>
+        <span class="value code">"PLT — 001"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">"=".repeat(45)</span>
+        <span class="value code">separator</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: VALIDACIONES -->
+    <section class="card">
+      <h2 class="card-title">🔍 Validaciones con Búsqueda</h2>
+      <div class="divider"></div>
+      <div class="info-row">
+        <span class="label">entityCode<span class="method">.startsWith("PLT")</span></span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityDescription<span class="method">.includes("restaurante")</span></span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">entityCode<span class="method">.endsWith("001")</span></span>
+        <span class="value bool-true">true</span>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: FICHA PRINCIPAL -->
+    <section class="card card-ficha">
+      <h2 class="card-title">🖨️ Ficha Multilínea (Template Literal)</h2>
+      <div class="divider"></div>
+      <div class="console-block">
+        <p class="console-separator">=============================================</p>
+        <p class="console-title">  RESTAURANTE EL SABOR — FICHA DE PLATO</p>
+        <p class="console-separator">=============================================</p>
+        <p><span class="console-label">Nombre:    </span>BANDEJA PAISA TRADICIONAL</p>
+        <p><span class="console-label">Categoría: </span>Plato Fuerte - Comida Típica</p>
+        <p><span class="console-label">Código:    </span>PLT — 001</p>
+        <p><span class="console-label">Prefijo:   </span>PLT</p>
+        <p><span class="console-label">Precio:    </span>$35000 COP</p>
+        <p><span class="console-label">Estado:    </span>Activo</p>
+        <br/>
+        <p class="console-separator">---------------------------------------------</p>
+        <p class="console-label">Descripción:</p>
+        <p class="console-desc">Plato típico colombiano con frijoles, chicharrón, carne molida, chorizo, arroz y aguacate. Disponible en el menú principal del restaurante.</p>
+        <p class="console-separator">=============================================</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5 y 6: NOTIFICACIONES -->
+    <section class="card card-notif">
+      <h2 class="card-title">📢 Mensajes de Notificación</h2>
+      <div class="divider"></div>
+      <div class="notif-box">
+        <p class="notif-label">Notificación pública</p>
+        <p class="notif-text">📢 Nuevo plato disponible: Bandeja Paisa Tradicional (PLT-001) — $35000 COP</p>
+      </div>
+      <div class="notif-box notif-system">
+        <p class="notif-label">Log del sistema</p>
+        <p class="notif-text">[SISTEMA] plato registrado: bandeja paisa tradicional | código: PLT-001</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>🚀 ¡Gracias por visitarnos!</p>
+  </footer>
+
+</body>
+</html>
