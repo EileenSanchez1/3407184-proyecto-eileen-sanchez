@@ -52,7 +52,7 @@ body {
 /* Badge de número de ficha */
 .header-badge {
   display: inline-block;
-  background-color: #ffffff
+  background-color: #ffffff;
   color: #ffffff;
   font-size: 12px;
   font-weight: 700;
