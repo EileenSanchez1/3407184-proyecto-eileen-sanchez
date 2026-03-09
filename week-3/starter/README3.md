@@ -99,7 +99,7 @@ paymentMethod !== "efectivo"     // ¿no es efectivo?
 ```js
 isLoyalCustomer && customerOrderTotal >= 80_000  // descuento
 isLoyalCustomer || customerOrderTotal >= 60_000  // domicilio gratis
-!(occupiedTables >= MAX_TABLES)                  // acepta reservas
+!(occupiedTables >= MAX_TABLES)                 // acepta reservas
 ```
 
 *Semana 3 · Bootcamp JavaScript ES2023 — Operadores Aritméticos, Comparación y Lógica*
