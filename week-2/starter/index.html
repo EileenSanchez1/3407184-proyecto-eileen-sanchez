@@ -1,187 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocina Colombiana Eileen's - Gestor de Menú</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante El Sabor - Semana 2</title>
+  <link rel="stylesheet" href="styles_s2.css" />
 </head>
-
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="title">🍽️ Cocina Colombiana Eileen's</h1>
-                <p class="subtitle">Gestor de Menú</p>
-            </div>
-            <div class="header-actions">
-                <button id="themeToggle" class="btn btn-icon">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
-        </header>
 
-        <!-- Estadísticas Resumen -->
-        <section class="stats-summary">
-            <div class="stat-card">
-                <span class="stat-value" id="stat-total">0</span>
-                <span class="stat-label">Total Platos</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-active">0</span>
-                <span class="stat-label">Disponibles</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-inactive">0</span>
-                <span class="stat-label">No Disponibles</span>
-            </div>
-        </section>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="header-badge">SEMANA 02 · FICHA DE DATOS</div>
+    <h1 class="header-title">🍽️ RESTAURANT EILEEN'S</h1>
+    <p class="header-sub">Variables, Tipos y Conversiones · Hotelería y Hospitalidad</p>
+  </header>
 
-        <!--Formulario para crear/editar platos-->
-        <section class="card form-section">
-            <div class="card-header">
-                <h2 id="form-title"> ➕ Nuevo Plato</h2>
-            </div>
-            <div class="card-body">
-                <form id="dish-form" class="dish-form">
-                    <div class="form-group">
-                        <lebel for="dish-name">Nombre del Plato *</lebel>
-                        <input type="text" id="dish-name" placeholder="Ej: Bandeja Paisa" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dish-description">Descripción</label>
-                        <textarea id="dish-description" rows="3"
-                            placeholder="Descripción del plato (opcional)"></textarea>
-                    </div>
+  <main class="container">
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dish-category">Categorí<a href=""></a></label>
-                            <select id="dish-category">
-                                <option value="platoFuerte">🍖 Plato Fuerte</option>
-                                <option value="sopas">🍲 Sopas</option>
-                                <option value="entrada">🥟 Entrada</option>
-                                <option value="bebidas">🥤 Bebidas</option>
-                                <option value="postres">🍰 Postres</option>
-                            </select>
-                        </div>
+    <!-- SECCIÓN 1: DATOS PRINCIPALES -->
+    <section class="card">
+      <h2 class="card-title">📋 Datos Principales</h2>
+      <div class="divider"></div>
 
-                        <div class="form-group">
-                            <label for="dish-priority">Popularidad</label>
-                            <select id="dish-priority">
-                                <option value="low">🟢 Baja</option>
-                                <option value="medium" selected>🟡 Media</option>
-                                <option value="high">🔴 Alta</option>
-                            </select>
-                        </div>
-                    </div>
+      <div class="info-row">
+        <span class="label">const dishName</span>
+        <span class="value">"Bandeja Paisa Tradicional"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">const dishCategory</span>
+        <span class="value">"Plato Fuerte - Comida Típica"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">const dishPrice</span>
+        <span class="value code">35_000</span>
+      </div>
+      <div class="info-row">
+        <span class="label">const isAvailable</span>
+        <span class="value bool-true">true</span>
+      </div>
+      <div class="info-row">
+        <span class="label">const assignedWaiter</span>
+        <span class="value null-val">null</span>
+      </div>
+    </section>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dish-price">Precio (COP)</label>
-                            <input type="number" id="dish-price" placeholder="25000" min="0" step="1000">
-                        </div>
+    <!-- SECCIÓN 2: FICHA DE DATOS -->
+    <section class="card">
+      <h2 class="card-title">🖨️ Salida en Consola</h2>
+      <div class="divider"></div>
 
-                        <div class="form-group">
-                            <label for="dish-time">Tiempo Preparación (min)</label>
-                            <input type="number" id="dish-time" placeholder="20" min="5" step="5">
-                        </div>
-                    </div>
+      <div class="console-block">
+        <p class="console-separator">===========================</p>
+        <p class="console-title">FICHA DE DATOS: Restaurante El Sabor</p>
+        <p class="console-separator">===========================</p>
+        <br/>
+        <p><span class="console-label">Nombre:    </span>Bandeja Paisa Tradicional</p>
+        <p><span class="console-label">Categoría: </span>Plato Fuerte - Comida Típica</p>
+        <p><span class="console-label">Precio:    </span>$35000 COP</p>
+        <p><span class="console-label">Disponible:</span>true</p>
+      </div>
+    </section>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" id="submit-btn">Crear Plato</button>
-                        <button type="button" class="btn btn-secondary" id="cancel-btn"
-                            style="display: none;">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+    <!-- SECCIÓN 3: TYPEOF -->
+    <section class="card">
+      <h2 class="card-title">🔍 Verificación de Tipos (typeof)</h2>
+      <div class="divider"></div>
 
-        <!-- Filtros y Búsqueda -->
-        <section class="card filters-section">
-            <div class="card-header">
-                <h2>🔍 Filtros y Búsqueda</h2>
-            </div>
-            <div class="card-body">
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="filter-status">Estado:</label>
-                        <select id="filter-status">
-                            <option value="all">Todos</option>
-                            <option value="active">Disponibles</option>
-                            <option value="inactive">No Disponibles</option>
-                        </select>
-                    </div>
+      <div class="info-row">
+        <span class="label">typeof dishName</span>
+        <span class="value type-string">string</span>
+      </div>
+      <div class="info-row">
+        <span class="label">typeof dishPrice</span>
+        <span class="value type-number">number</span>
+      </div>
+      <div class="info-row">
+        <span class="label">typeof isAvailable</span>
+        <span class="value type-boolean">boolean</span>
+      </div>
+    </section>
 
-                    <div class="filter-group">
-                        <label for="filter-category">Categoría:</label>
-                        <select id="filter-category">
-                            <option value="all">Todas</option>
-                            <option value="platoFuerte">Plato Fuerte</option>
-                            <option value="sopas">Sopas</option>
-                            <option value="entrada">Entrada</option>
-                            <option value="bebidas">Bebidas</option>
-                            <option value="postres">Postres</option>
-                        </select>
-                    </div>
+    <!-- SECCIÓN 4: CONVERSIONES -->
+    <section class="card">
+      <h2 class="card-title">🔄 Conversión Explícita</h2>
+      <div class="divider"></div>
 
-                    <div class="filter-group">
-                        <label for="filter-priority">Popularidad:</label>
-                        <select id="filter-priority">
-                            <option value="all">Todas</option>
-                            <option value="high">Alta</option>
-                            <option value="medium">Media</option>
-                            <option value="low">Baja</option>
-                        </select>
-                    </div>
+      <div class="info-row">
+        <span class="label">String(dishPrice)</span>
+        <span class="value highlight">"35000"</span>
+      </div>
+      <div class="info-row">
+        <span class="label">typeof (convertido)</span>
+        <span class="value type-string">string</span>
+      </div>
+      <p class="conversion-note">number → String() → string ✔</p>
+    </section>
 
-                    <div class="filter-group search-group">
-                        <label for="search-input">Buscar:</label>
-                        <input type="text" id="search-input" placeholder="Buscar platos...">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- SECCIÓN 5: NULL -->
+    <section class="card card-null">
+      <h2 class="card-title">⚠️ Valor Nulo</h2>
+      <div class="divider"></div>
 
-        <!-- Lista de Platos -->
-        <section class="card dishes-section">
-            <div class="card-header">
-                <h2>📝 Lista de Platos del Menú</h2>
-                <button class="btn btn-outline" id="clear-inactive">🗑️ Limpiar No Disponibles</button>
-            </div>
-            <div class="card-body">
-                <div id="dish-list" class="dish-list">
-                    <!-- Los platos se renderizan aquí con JavaScript -->
-                </div>
+      <div class="info-row">
+        <span class="label">assignedWaiter</span>
+        <span class="value null-val">null</span>
+      </div>
+      <div class="info-row">
+        <span class="label">typeof assignedWaiter</span>
+        <span class="value type-object">object <span class="bug-note">← bug histórico de JS</span></span>
+      </div>
+      <div class="info-row">
+        <span class="label">assignedWaiter === null</span>
+        <span class="value bool-true">true</span>
+      </div>
+    </section>
 
-                <div id="empty-state" class="empty-state">
-                    <p>📭 No hay platos que mostrar</p>
-                    <p class="empty-state-hint">Crea tu primer plato usando el formulario arriba</p>
-                </div>
-            </div>
-        </section>
+  </main>
 
-        <!-- Estadísticas Detalladas -->
-        <section class="card detailed-stats">
-            <div class="card-header">
-                <h2>📊 Estadísticas por Categoría</h2>
-            </div>
-            <div class="card-body">
-                <div id="stats-details" class="stats-grid">
-                    <!-- Estadísticas se renderizan aquí -->
-                </div>
-            </div>
-        </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>🚀 ¡Gracias por visitarnos!</p>
+  </footer>
 
-        <!-- Toast Notification -->
-        <div id="toast" class="toast">
-            <span id="toastMessage"></span>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
